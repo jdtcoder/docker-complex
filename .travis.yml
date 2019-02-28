@@ -20,15 +20,16 @@ after_success:
     - docker push jdtcoder/complex-nginx
     - docker push jdtcoder/complex-server
     - docker push jdtcoder/complex-worker
-# deploy:
-#     provider: elasticbeanstalk
-#     region: "us-east-2"
-#     app: "docker-react"
-#     env: "DockerReact-env"
-#     bucket_name: "elasticbeanstalk-us-east-2-462173466510"
-#     bucket_path: "docker-react"
-#     on:
-#         branch: master
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key:
-#         secure: "$AWS_SECRET_KEY"
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-complex"
+    env: "DockerComplex-env"
+    bucket_name: "elasticbeanstalk-us-east-2-462173466510"
+    bucket_path: "docker-complex"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: "$AWS_SECRET_KEY"
